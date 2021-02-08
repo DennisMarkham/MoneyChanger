@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+
+  <input type="text" id="amount"> 
+  <select id = "inCur">
+  	<option value = 1.00 selected name = "US dollar">US dollar</option>
+  	<option value = .89 name = "CAD">CAD</option>
+  	<option value = 100.00 name = "Yen">Yen</option>
+  </select>
+
+  <select id ="outCur">
+  	<option value = 1.00 name = "US dollar">US dollar</option>
+  	<option value = .89 name = CAD>CAD</option>
+  	<option value = 100.00 name = "Yen">Yen</option>
+  </select>
+
+  <button onclick = "changeMoney()"></button>
+  <span id = result></span>
+
+<script>
+  var amount = document.getElementById("amount");
+  var inCurMult = document.getElementById("inCur").value();
+  var outCurMult = document.getElementById("outCur").value();
+  var resultVar = amount * inCurMult * outCurMult;
+
+  var outCurFeild = document.getElementById("outCur");
+  var outCurName = outCurFeild.options[outCurFeild.selectedIndex].text;
+  
+
+
+  function changeMoney()
+  {
+    document.getElementById("result").text(resultVar + outCurName)
+  }
+</script>
+</body>
+</html>
