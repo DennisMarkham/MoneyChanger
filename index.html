@@ -16,13 +16,13 @@
   	<option value = 100.00 name = "Yen">Yen</option>
   </select>
 
-  <button onclick = "changeMoney()"></button>
-  <span id = result></span>
+  <button onclick = "changeMoney()">submit</button>
+  <span id = "result"></span>
 
 <script>
   var amount = document.getElementById("amount");
-  var inCurMult = document.getElementById("inCur").value();
-  var outCurMult = document.getElementById("outCur").value();
+  var inCurMult = document.getElementById("inCur").value;
+  var outCurMult = document.getElementById("outCur").value;
   var resultVar = amount * inCurMult * outCurMult;
 
   var outCurFeild = document.getElementById("outCur");
@@ -32,7 +32,7 @@
 
   function changeMoney()
   {
-    document.getElementById("result").text(resultVar + outCurName)
+    document.getElementById("result").text = resultVar + outCurName;
   }
 </script>
 </body>
